@@ -123,7 +123,7 @@ If a function is explained sufficiently by its entry in Docs/Luadoc/Lua.xml, it 
 
 ## Function Chaining:
 All lua functions that didn't return something before now return the object they were called on.
-	Example: (yes I saw function chaining used in a certain gimmick noteskin)
+	Example: (yes I saw function chaining used in a certain gimmick noteskin)  
 	```lua
 	-- old style:
 	self:zoom(.5)
@@ -308,7 +308,7 @@ doesn't require its own On/OffCommand pair.  These are also optional, but if
 they are set, they will override the individual commands if they exist. (If
 "IconChoiceCactusOnCommand" and "IconChoiceOnCommand" both exist,
 "IconChoiceOnCommand" will be used.)
-Example:
+Example:  
 	```
 	# in metrics.ini
 	IconChoicePosFunction=choice_positions
