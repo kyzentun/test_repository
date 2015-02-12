@@ -124,14 +124,14 @@ If a function is explained sufficiently by its entry in Docs/Luadoc/Lua.xml, it 
 ## Function Chaining:
 All lua functions that didn't return something before now return the object they were called on.
 	Example: (yes I saw function chaining used in a certain gimmick noteskin)  
-	```lua
+```lua
 	-- old style:
 	self:zoom(.5)
 	self:xy(_screen.cx, _screen.h-60)
 	self:diffuse(color("#dc322f"))
 	-- new style:
 	self:zoom(.5):xy(_screen.cx, _screen.h-60):diffuse(color("#dc322f"))
-	```
+```
 
 ## Function Naming:
 CubicSplineN, NoteColumnRenderer, NoteField, and NCSplineHandler list their functions with underscore style names.  Camelcase style aliases exist for all their functions, use whichever naming style you prefer.
@@ -309,18 +309,19 @@ they are set, they will override the individual commands if they exist. (If
 "IconChoiceCactusOnCommand" and "IconChoiceOnCommand" both exist,
 "IconChoiceOnCommand" will be used.)
 Example:  
-	```
+```
 	# in metrics.ini
 	IconChoicePosFunction=choice_positions
-	```
-	```lua
+```
+
+```lua
 	-- In a file in Scripts/
 	function choice_positions(count)
 	  local ret= {}
 	  for i= 1, ret do ret[i]= {i*24, i*48} end
 	  return ret
 	end
-	```
+```
 
 ### ScreenSelectMusic:
 * [M] HardCommentMeter  
