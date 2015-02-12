@@ -301,11 +301,8 @@ The lua command can then return a table of GameCommands which are used to create
 ### ScreenSelectMaster:
 * [M] IconChoicePosFunction  
 This metric is optional, if it's set, it must be set to a function that
-returns a table of positions.  Each position is a table of the form
-```
-{x, y, z}
-```
-, where x, y, and z are numbers and any that is not a number defaults to 0.  
+returns a table of positions.  Each position is a table of the form ``` {x, y, z} ```, where x, y, and z are numbers and any that is not a number
+defaults to 0.  
 The function is passed the number of choices for the screen.
 IconChoiceOnCommand and IconChoiceOffCommand metrics added so each choice
 doesn't require its own On/OffCommand pair.  These are also optional, but if
@@ -349,7 +346,10 @@ have no translation at all.
 * [F] GetStepsSeconds
 
 ### Style:
-* [F] NeedsZoomOutWith2Players always returns false now.
+* [F] NeedsZoomOutWith2Players always returns false now.  
+The related variable no longer exists, ScreenGameplay now uses the width of
+the notefield and the MarginFunction to decide whether to zoom out the
+notefield.
 
 ### TimingData:
 Pass true as the last arg if you want the data in tables instead of strings.
@@ -400,7 +400,8 @@ from the music wheel.  Selecting them before would crash.
 * Combo and point score changed to unsigned.  A simfile with a huge tapcount no longer causes a crash.
 
 ### Simfiles:
-* If a chart for an unrecognized style is in the simfile, it is preserved instead of deleted.  
+* If a chart for an unrecognized style is in the simfile, it is preserved
+correctly.  
 Previously, charts for unrecognized styles would end up on dance-single,
 where they don't belong.  Now a warning is printed to the log file and the
 charts are completely inaccessible in the game.  This probably only occurs
@@ -415,7 +416,7 @@ https://github.com/stepmania/stepmania/pull/343 for details.
 
 
 # Preemptive problem solving:
-* "Tried to switch to a background that was never loaded: &lt;BackgroundDef Effect='StretchNoLoop' File1='1.000'/&rt;"
+* "Tried to switch to a background that was never loaded: &lt;BackgroundDef Effect='StretchNoLoop' File1='1.000'/>"
 
 This occurs with some simfiles that have a malformed BGCHANGES line.  Either
 the file doesn't exist in Stepmania/BGAnimations or the song folder, or the
