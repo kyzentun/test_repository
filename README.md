@@ -310,17 +310,9 @@ The function is passed the number of choices for the screen.
 IconChoiceOnCommand and IconChoiceOffCommand metrics added so each choice
 doesn't require its own On/OffCommand pair.  These are also optional, but if
 they are set, they will override the individual commands if they exist. (If
-```
-IconChoiceCactusOnCommand
-```
- and
-```
-IconChoiceOnCommand
-```
- both exist,
-```
-IconChoiceOnCommand
-```
+``` IconChoiceCactusOnCommand ```
+ and ``` IconChoiceOnCommand ```
+ both exist, ``` IconChoiceOnCommand ```
  will be used.)
 Example:  
 ```
