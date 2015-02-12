@@ -6,7 +6,6 @@ StepMania 5.0.5; release notes compiled and Markdown formatted by @kyzentun:
 * Prominent bug fixes:  Bugs that seem prominent and aren't solely relevant to themers.  Listing every tiny little bug would make these notes far longer than they already are, so most bugs are left out.
 * Preemptive problem solving:  Problems that might commonly occur and have a known good solution.
 
-Each section will first list each of the items in it, then after the full list, each item will be discussed in detail.
 Items are roughly grouped into the general part of Stepmania they fit into.
 
 # Player visible changes:
@@ -23,7 +22,7 @@ Items are roughly grouped into the general part of Stepmania they fit into.
 seconds is recorded as a hold.  This amount of time can now be adjusted up
 or down with Q/W or set to 120 seconds with R or reset to 0.3 with E.
 
-* Record Mode Lead In Time:
+* ### Record Mode Lead In Time:
 	Preference for setting the number of seconds before the selected section
 comes up in record mode.  Should be settable on the options screen in edit
 mode in default theme.
@@ -102,7 +101,7 @@ theme still uses the old system for backwards compatibility.
 Player nameplates added with bpm info.
 
 ## Translations:
-Spanish translation updated by Alejandro G. de la Muñoza.
+Spanish translation updated by Alejandro G. de la Muñoza.  
 Polish translation updated by Jarosław Pietras.
 
 
@@ -122,7 +121,7 @@ If a function is explained sufficiently by its entry in Docs/Luadoc/Lua.xml, it 
 * Thread variables are marked with [V]
 
 ## Function Chaining:
-All lua functions that didn't return something before now return the object they were called on.
+All lua functions that didn't return something before now return the object they were called on.  
 	Example: (yes I saw function chaining used in a certain gimmick noteskin)  
 ```lua
 	-- old style:
@@ -293,21 +292,36 @@ Centered on screen instead of centered on the row because more options were adde
 
 ### ScreenSelect:
 * [M] ChoiceNames  
-This metric can be a lua command like this now: ChoiceNames="lua,ScreenSelectStyleChoices()"  
+This metric can be a lua command like this now:
+```
+ChoiceNames="lua,ScreenSelectStyleChoices()"
+```
 The lua command can then return a table of GameCommands which are used to create the choices.
 
 ### ScreenSelectMaster:
 * [M] IconChoicePosFunction  
 This metric is optional, if it's set, it must be set to a function that
 returns a table of positions.  Each position is a table of the form
-"{x, y, z}", where x, y, and z are numbers and any that is not a number
-defaults to 0.  
+```
+{x, y, z}
+```
+, where x, y, and z are numbers and any that is not a number defaults to 0.  
 The function is passed the number of choices for the screen.
 IconChoiceOnCommand and IconChoiceOffCommand metrics added so each choice
 doesn't require its own On/OffCommand pair.  These are also optional, but if
 they are set, they will override the individual commands if they exist. (If
-"IconChoiceCactusOnCommand" and "IconChoiceOnCommand" both exist,
-"IconChoiceOnCommand" will be used.)
+```
+IconChoiceCactusOnCommand
+```
+ and
+```
+IconChoiceOnCommand
+```
+ both exist,
+```
+IconChoiceOnCommand
+```
+ will be used.)
 Example:  
 ```
 	# in metrics.ini
