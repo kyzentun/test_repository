@@ -101,8 +101,11 @@ theme still uses the old system for backwards compatibility.
 Player nameplates added with bpm info.
 
 ## Translations:
+Dutch translation updated by Kevin O. (Thumbsy).
 Spanish translation updated by Alejandro G. de la Muñoza.  
 Polish translation updated by Jarosław Pietras.
+Japanese installer translation by hanubeki.
+Partial French translation by Grégory Doche.
 
 
 ## Videos:
